@@ -3,6 +3,7 @@
   "description": "기본 에이전트 - 모든 도구 자동 승인",
   "tools": ["*"],
   "allowedTools": ["*"],
+  "trustAll" : true,
   "resources": [
     "file://.kiro/steering/**/*.md"
   ],
