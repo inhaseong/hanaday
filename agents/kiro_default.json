@@ -1,0 +1,10 @@
+{
+  "name": "kiro_default",
+  "description": "기본 에이전트 - 모든 도구 자동 승인",
+  "tools": ["*"],
+  "allowedTools": ["*"],
+  "resources": [
+    "file://.kiro/steering/**/*.md"
+  ],
+  "welcomeMessage": "Kiro CLI 준비 완료. 모든 도구가 자동 승인되어 있습니다."
+}
