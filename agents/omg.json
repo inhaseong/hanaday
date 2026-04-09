@@ -12,8 +12,12 @@
   "resources": [
     "file://.kiro/steering/**/*.md"
   ],
-  "hooks": {
+"hooks": {
   "agentSpawn": [
+    {
+      "command": "git rev-parse --is-inside-work-tree > /dev/null 2>&1 || git init",
+      "timeout_ms": 5000
+    },
     {
       "command": "git status --porcelain",
       "timeout_ms": 5000
