@@ -13,20 +13,16 @@
     "file://.kiro/steering/**/*.md"
   ],
   "hooks": {
-    "agentSpawn": [
-      {
-        "command": "git rev-parse --is-inside-work-tree > /dev/null 2>&1 || git init",
-        "timeout_ms": 5000
-      },
-      {
-        "command": "git status --porcelain",
-        "timeout_ms": 5000
-      },
-      {
-        "command": "git log --oneline -5",
-        "timeout_ms": 5000
-      }
-    ]
-  },
+  "agentSpawn": [
+    {
+      "command": "git status --porcelain",
+      "timeout_ms": 5000
+    },
+    {
+      "command": "git log --oneline -5 2>/dev/null || echo '(커밋 없음)'",
+      "timeout_ms": 5000
+    }
+  ]
+},
   "welcomeMessage": "장애 분석/조치 에이전트입니다. 장애 상황을 알려주세요.\n\n작업 절차: 상황 파악 → 원인 분석 → 조치 수행 → 코드 리뷰 → 보고서 작성 → Git 커밋"
 }
